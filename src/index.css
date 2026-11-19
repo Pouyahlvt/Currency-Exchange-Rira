@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-persian: "Vazirmatn", sans-serif;
+
+  --animate-sweep: sweep 2.5s linear infinite;
+
+  @keyframes sweep {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(400%);
+    }
+  }
+}
+
+@keyframes letterInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(8px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+    filter: blur(8px);
+  }
+}
+
+.letter {
+  opacity: 0;
+  animation: letterInOut 6s ease-in-out forwards;
+  display: inline-block;
+  will-change: opacity, transform, filter;
+}
+
+@keyframes animate-one {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-one {
+  opacity: 0;
+  animation: animate-one 1s ease-in-out forwards;
+  animation-delay: 7s;
+}
